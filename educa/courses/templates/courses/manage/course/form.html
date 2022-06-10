@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+<!-- Шаблон form.html используется двумя обработчиками: 
+  CourseCreateView и CourseUpdateView. В нем мы проверяем, 
+  есть ли переменная object в контексте. -->
 {% block title %}
   {% if object %}
     Edit course "{{ object.title }}"

@@ -4,7 +4,12 @@ com/en/2.0/topics/class-based-views/mixins/.
  собственные  разрешения.  Более  подробно  об  этом  можно  про-
 честь  на  странице  https://docs.djangoproject.com/en/2.0/topics/auth/customizing/ 
 #custom-permissions.
- информация о формсетах приведена в документации на 
+ Использование примесей из django-braces
+Пакет django-braces – это сторонняя библиотека, которая содержит примеси для 
+Django. Полный список всех примесей можно найти на странице https://django-
+braces.readthedocs.io/.
+\\\\\\\\\\\\\\\\\\\\\
+информация о формсетах приведена в документации на 
 страницах  https://docs.djangoproject.com/en/2.0/topics/forms/formsets/  и  https://
 docs.djangoproject.com/en/2.0/topics/forms/modelforms/#model-formsets  (для  мо-
 дельных форм)
