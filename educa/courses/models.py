@@ -5,12 +5,12 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
 
 class Subject(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
-    class Meta:
-        ordering = ['title']
-    def __str__(self):
-        return self.title
+        title = models.CharField(max_length=200)
+        slug = models.SlugField(max_length=200, unique=True)
+        class Meta:
+            ordering = ['title']
+        def __str__(self):
+            return self.title
 class Course(models.Model):
     owner = models.ForeignKey(User,
                                related_name='courses_created',
@@ -22,11 +22,14 @@ class Course(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    students = models.ManyToManyField(User,
+                                   related_name='courses_joined',
+                                   blank=True)
     class Meta:
         ordering = ['-created']
     def __str__(self):
-
         return self.title
+
 class Module(models.Model):
     course = models.ForeignKey(Course,
                                 related_name='modules',
@@ -39,7 +42,6 @@ class Module(models.Model):
     def __str__(self):
         return '{}. {}'.format(self.order, self.title)
         
-
 students = models.ManyToManyField(User,
                                    related_name='courses_joined',
                                    blank=True) 
@@ -80,3 +82,5 @@ class Image(ItemBase):
     file = models.FileField(upload_to='images')
 class Video(ItemBase):
     url = models.URLField()    
+
+                   

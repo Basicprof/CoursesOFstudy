@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+<!-- шаблон будет формировать все модули курса и их содержимое -->
 {% load course %}
 {% block title %}
   Module {{ module.order|add:1 }}: {{ module.title }}
 {% endblock %}
 {% block content %}
+<!-- Мы об ращаемся к списку модулей, чтобы отобразить их в боковой панели -->
 {% with course=module.course %}
   <h1>Course "{{ course.title }}"</h1>
   <div class="contents">
@@ -33,7 +35,10 @@
     <div id="module-contents">
       {% for content in module.contents.all %}
         <div data-id="{{ content.id }}">
+          <!-- ходим по списку содержимого каждого модуля, обращаясь к content.item -->
+          <!-- получить соответствующий объект одного из типов Text, Video, Image или File -->
           {% with item=content.item %}
+          <!-- свой  шаблонный фильтр -->
           <p>{{ item }} ({{ item|model_name }})</p>
           <a href="{% url 'module_content_update' module.id item|model_name item.id
           %}">Edit</a>

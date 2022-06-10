@@ -77,11 +77,12 @@ h1 {
     padding:0;
 }
  
-.contents {
+.contents {  
     width:20%;
     padding:10px; 
     float:left; 
-    background:#333;
+    background:#1c0b9e;
+    margin-left: 30px;
     color: #fff;
     font-family:'Roboto', sans-serif;
 }
