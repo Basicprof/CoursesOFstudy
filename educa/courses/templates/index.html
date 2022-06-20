@@ -4,31 +4,48 @@
 <head>
   <meta charset="utf-8" />
   <title>{% block title %}Educa{% endblock %}</title>
-  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'css/base.css' %}" rel="stylesheet"> -->
   <link href="{% static 'css/rem.css' %}" rel="stylesheet">
-  <script
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
 <body>
-  <div class="hight"> 
-    <div class="hight__logo">
-      <span>Библиотека</span> </div>
-      
-   </div></div></div>
-   <div class="hight__blok"> 
-</div>
-<div class="content">
-   <div class="content__rich"><span> Обучалкин</span></div>
-   <h4>Онлайн школа</h4><a href="{% url 'index' %}">Поехали...</a></div> 
-   <div class="datas"><p>Приложение курсов обучения с правами доступа
-        Технологии: Django, CMS,Система Регистрации пользователей,
-         Наборы форм, Кеширование, Postgress,
-        примеси django-braces, Порядок модулей и содержимого drag-m-drop (виджет JavaScript),
-        Ajax - сохранение в бд. RESTful api(реализация получения курсов)</p>
-         
-        
+  <div class="containerA">  
+  <div class="row mb-3">
+    <div class="col-sm-2 themed-grid-col"> 
+      <div class="hight__logo">
+      <span>Библиофил {{cours.count}} -Курсов</span>
       </div>
-  </body>
+    </div>
+    <div class="col-sm-8 themed-grid-col">
+      <p>Приложение курсов обучения с правами доступа.
+      Технологии: Django, CMS,Система Регистрации пользователей,
+       Наборы форм, Кеширование-Memcached, База данных-Postgress,
+      примеси django-braces, Порядок модулей и содержимого drag-m-drop (виджет JavaScript),
+      Ajax - сохранение в бд, управление доступом пользователей
+      Единый интерфейс для формирования  <a href="{% url 'api:subject_list' %}">RESTful api</a> (реализация получения курсов)
+      c аунтификацией(для зачисления на курс), управление доступом пользователей
+      Единый интерфейс для формирования  
+      шаблонов содержимого разных типов</p>
+      <ul>
+      <li>Список всех предметов <a href="{% url 'api:subject_list' %}">http://127.0.0.1:8000/api/Subject/</a></li>
+      <li>Детали предмета:     <a href="{% url 'api:subject_detail' 1 %}"></a> http://127.0.0.1:8000/api/Subject/1</a></li>
+      <li>Cписок курсов: <a href="{% url 'api:subject_detail' 1 %}">http://127.0.0.1:8000/api/courses/</a></li>
+      <li>Детали курса <a href="{% url 'api:subject_detail' 1 %}"> http://127.0.0.1:8000/api/courses/1</a></li>
+      <li>Зачисление на курс:<a href="{% url 'api:subject_detail' 1 %}">  http://127.0.0.1:8000/api/courses/1/enroll/</a></li>
+ 
+    </ul>
+  </div>
+    <div class="col-sm-2 themed-grid-col">
+    <div class="hight__blok"></div></div>
+ </div></div></div> 
+ <div class="row">
+  <div class="col-sm-2 themed-grid-col"> 
+    <div class="content">
+  <div class="content__rich"><span>Обучалкин</span></div>
+  <h4>Онлайн школа</h4>
+  <a href="{% url 'course_list' %}">Поехали...</a>
+</div></div></div>
+</body>
 </html>

@@ -1,8 +1,13 @@
+ 1. djbook.ru - сайт по джанго на русском
+ 2. django.fun - на русском
+ 3. materializecss.com Где взять цвета
+ https://lorem.space/api - заполнения по api
+ 4. Кешировать можно в файловую систему 
+Где брать текст или картинку Lorem image lorem text
  Примеси
   https://docs.djangoproject.
 com/en/2.0/topics/class-based-views/mixins/.
- собственные  разрешения.  Более  подробно  об  этом  можно  про-
-честь  на  странице  https://docs.djangoproject.com/en/2.0/topics/auth/customizing/ 
+ собственные  разрешения.   https://docs.djangoproject.com/en/2.0/topics/auth/customizing/ 
 #custom-permissions.
  Использование примесей из django-braces
 Пакет django-braces – это сторонняя библиотека, которая содержит примеси для 
@@ -13,3 +18,68 @@ braces.readthedocs.io/.
 страницах  https://docs.djangoproject.com/en/2.0/topics/forms/formsets/  и  https://
 docs.djangoproject.com/en/2.0/topics/forms/modelforms/#model-formsets  (для  мо-
 дельных форм)
+Полную документацию пакета django-embed-video можно найти на странице 
+https://django-embed-video.readthedocs.io/en/latest/.
+========================================
+              memcached
+1.запуск от имени админа cmd все команды и запуск
+ставлю версию 1.4.4 c:\memcached\memcached.exe -d install
+c:\memcached\memcached.exe -d install
+* Обратите внимание на путьc:\memcached\memcached.exeЗамените на свой локальный путь установки.
+3. Затем используйте следующую команду для запуска или остановки службы memcached:
+c:\memcached\memcached.exe -d start
+c:\memcached\memcached.exe -d stop
+4. Измените элементы конфигурации memcached с помощью ключей реестра. Введите во время работыregedit.exe, Затем перейдите к "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\memcached". Измените значение ключа. Например, если вы хотите увеличить максимальный предел памяти, используемый memcached, вы можете изменитьImagePathЦенить:
+"c:\memcached\memcached.exe" -d runservice -m 512
+* Помимо параметра «-m 512», вы также можете использовать другие параметры. к"c:\memcached\memcached.exe -h"Вы можете просмотреть все доступные параметры.
+5. Если вы хотите удалить службу memcached, вы можете использовать следующую команду:
+c:\memcached\memcached.exe -d uninstall
+2. schtasks /create /sc onstart /tn memcached /tr "'H:\Python\TOTORIAL\mem\memcached-1.6.15' -m 512"Более подробно про работу подсистемы кеширования Django можно про-
+честь  на  странице  документации  https://docs.djangoproject.com/en/2.0/topics/
+cache/.
+Скачайте приложение с сайта: https://memcached.org/downloads. Если вы ра-
+ботаете с операционной системой Linux, для установки достаточно выполнить 
+команду:
+memcached -l 127.0.0.1:11211
+По  умолчанию  приложение  будет  запущено  на  порту  11211.  Но  вы  може-
+те задать любой другой с помощью флага –l. Более подробную информацию 
+
+о Memchached можно найти в официальной документации на странице https://
+memcached.org/.
+После установки приложения необходимо установить также и Python-пакет 
+для взаимодействия с Memcached из Python-кода. Выполните такую команду:
+pip install python-memcached==1.59 
+====
+Рендереры  и  парсеры  можно  найти  на 
+страницах  https://www.django-rest-framework.org/api-guide/renderers/  и  https://
+www.django-rest-framework.org/ api-guide/parsers/ соответственно.
+ Базовые  классы  и  примеси   http://www.django-
+rest-framework.org/api-guide/generic-views/
+ Если ваша операционная система не поддерживает 
+утилиту curl по умолчанию, скачайте ее с сайта https://curl.haxx.se/dlwiz/. Кроме 
+этого, вместо curl можно использовать любой другой инструмент по отправке 
+HTTP-запросов, например расширение для браузеров Postman. Для его скачи-
+вания обратитесь к сайту https://www. getpostman.com/
+Особенности работы сериализаторов https://www.django-rest-framework.org/api-guide/serializers/.
+ BasicAuthentication  –  бэкэнд  для  базовой  аутентификации  по  HTTP. 
+Пользователь  и  пароль  отправляются  в  зашифрованном  виде  в  HTTP-
+заголовке Authorization. Подробное описание этого механизма приведе-
+но на странице https://en.wikipedia.org/wiki/Basic_access_authentication;
+Более подробную информацию об аутентификации во фреймворке Django 
+REST можно найти на странице https://www.django-restframework.org/api-guide/
+authentication/.
+Подробная информация о работе с разрешениями в Django REST Framework 
+с примерами приведена на странице https://www.django-restframework.org/api-
+guide/permissions/.
+Полная документация по набору обработчиков приведена на сайте https://
+www.django-rest-framework.org/apiguide/viewsets/. Подробнее о работе с маршру-
+тизаторами Django REST можно прочитать на странице https://www.django-rest-
+framework.org/api-guide/routers/.
+ фреймворка Django REST. Ознакомиться с подробным опи-
+санием его возможностей и полной документацией вы можете на сайте https://
+www.django-rest-framework.org/.
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+PriPro = Программа которая обновляет страницы автоматом
+no mel . emel наборы шрифтов если нет в гугле
+font2 web format шрифтов после скачивания
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

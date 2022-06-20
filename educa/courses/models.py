@@ -1,14 +1,18 @@
+from tabnanny import verbose
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
-
+from django.template.loader import render_to_string
+from django.utils.safestring import mark_safe
 class Subject(models.Model):
         title = models.CharField(max_length=200)
         slug = models.SlugField(max_length=200, unique=True)
         class Meta:
             ordering = ['title']
+            verbose_name = 'Предмет'
+            verbose_name_plural = 'Предметы'
         def __str__(self):
             return self.title
 class Course(models.Model):
@@ -27,6 +31,8 @@ class Course(models.Model):
                                    blank=True)
     class Meta:
         ordering = ['-created']
+        verbose_name = 'Курс'
+        verbose_name_plural = 'Курсы'
     def __str__(self):
         return self.title
 
@@ -74,6 +80,14 @@ class ItemBase(models.Model):
         abstract = True
     def __str__(self):
         return self.title
+#         В этом методе мы вызываем функцию render_to_string(), чтобы сгенериро-
+# вать шаблон с контекстом и получить результат в виде строки
+# Чтобы динамически формировать имя шаблона, обратимся 
+# к атрибуту self._meta.model_name модели. Метод render() предоставляет общий 
+# интерфейс для генерации шаблона под конкретный тип содержимого.
+    def render(self):
+        return render_to_string('courses/content/{}.html'.format(
+                    self._meta.model_name), {'item': self})    
 class Text(ItemBase):
     content = models.TextField()
 class File(ItemBase):
