@@ -59,6 +59,13 @@ PriPro = Программа которая обновляет страницы �
 no mel . emel наборы шрифтов если нет в гугле
 font2 web format шрифтов после скачивания
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+лучшее решение для ключа
+SECRET_KEY_VALUE_ENV = get_random_secret_key()
+CRET_KEY = str(os.environ.get('SECRET_KEY_VALUE_ENV'))
+# SECURITY WARNING: don't run with debug turned on in production!
+ 
+
+///////////////////
 Рендереры  и  парсеры  можно  найти  на 
 страницах  https://www.django-rest-framework.org/api-guide/renderers/  и  https://
 www.django-rest-framework.org/ api-guide/parsers/ соответственно.
