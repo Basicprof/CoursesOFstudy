@@ -124,3 +124,5 @@ CACHES = {
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 1 #6 * 1 # 15 minutes
 CACHE_MIDDLEWARE_KEY_PREFIX = 'educa'
+#for NGINX server compiling:: python manage.py collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

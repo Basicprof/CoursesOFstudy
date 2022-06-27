@@ -1,9 +1,9 @@
 from .base import *
-DEBUG = False
+DEBUG = True
 ADMINS = (
      ('Antonio M', 'basicprof@gmail.com'),
 )
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['educaproject.com', 'www.educaproject.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -14,3 +14,4 @@ DATABASES = {
         'PORT': '5433'
     }
 }
+ALLOWED_HOSTS = ['127.0.0.1','educaproject.com', 'www.educaproject.com']

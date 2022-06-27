@@ -1,3 +1,35 @@
+ //////////////////////
+  плагины для vscode
+ С++
+ С++ IntelliSense
+Better C++ Syntax
+......
+
+uwsgi - Установка по ссылке
+ https://tutorialmeta.com/question/how-to-install-uwsgi-on-windows
+Полная установка при ошибках
+https://question-it.com/questions/5019978/pip-install-uwsgi-daet-oshibku-attributeerror-modul-os-ne-imeet-atributa-uname
+
+
+ Шаг 5: Запуститеpip install uwsgi, и вы получите уже удовлетворенное требование:. Попробуйте pip freeze, и вы увидите, что uwsgi указан в списке. 
+ setup-x86_64.exe -q -P wget -P gcc-g++ -P gcc-core -P gcc-g++ -P libcrypt-devel -P libintl-devel -P python3 -P python3-devel
+ОБЯЗАТЕЛЬНО 
+python setup.py install
+запускать только в cygwin
+////////////////////////
+Оболочка линукс для виндовс
+ cygwin path = C/cygwin/bin
+ зеркала http://cygwin.com/mirrors.html
+ рабочий ftp://sunsite.icm.edu.pl/pub/cygnus/cygwin/
+ =============
+ start nginx стартуем сервер
+ tasklist /fi "imagename eq nginx.exe"
+nginx -s stop	быстрое завершение
+nginx -s quit	плавное завершение
+nginx -s reload	изменение конфигурации,
+т запуск новых рабочих процессов с новой конфигурацией, плавное завершение старых рабочих процессов
+
+ ////////////////
  Проверка перед запуском
  python manage.py check –deploy
  ///////////////////////
@@ -22,8 +54,11 @@ requirements.txt Зависимости
 pip install -r requirements.txt
    Заморозить пакеты 
 pip freeze > requirements.txt
-Вылетала ошибка несовместимости пакета 
-правильно psycopg2=2.9.3 Django==2.0.5
+Вылетала ошибка несовместимости пакета
+еще ошибка нужно ниже 2.9 psycopg2
+AssertionError: database connection isn’t set to UTC
+правильно psycopg2=2.8.6 Django==2.0.5
+
 ========================================
               memcached
 1.запуск от имени админа cmd все команды и запуск
