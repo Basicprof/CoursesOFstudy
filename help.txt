@@ -1,3 +1,4 @@
+ python manage.py collectstatic
  //////////////////////
   плагины для vscode
  С++
