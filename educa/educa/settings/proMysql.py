@@ -12,7 +12,7 @@ DATABASES = {
         'PASSWORD': 'CreateDb',
         'HOST': 'coursesall.mysql.pythonanywhere-services.com',
         'TEST': {
-          'NAME': '<coursesall>$test_<coursesdb>',
+          'NAME': 'coursesall$test_coursesdb',
           }
     }
 }
