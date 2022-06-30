@@ -3,18 +3,17 @@ DEBUG = True
 ADMINS = (
      ('Antonio M', 'basicprof@gmail.com'),
 )
-# ALLOWED_HOSTS = ['educaproject.com', 'www.educaproject.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'coursesall$coursesdb',
+        'NAME': 'cours$cours',
         'USER': 'coursesall',
-        'PASSWORD': 'CreateDb',
-        'HOST': 'coursesall.mysql.pythonanywhere-services.com',
+        'PASSWORD': 'bdpassword',
+        'HOST': 'cours.mysql.pythonanywhere-services.com',
         'TEST': {
-          'NAME': 'coursesall$test_coursesdb',
+          'NAME': 'cours$test_cours',
           }
     }
 }
-ALLOWED_HOSTS = ['coursesall.pythonanywhere.com',]
+ALLOWED_HOSTS = ['cours.pythonanywhere.com',]
  
