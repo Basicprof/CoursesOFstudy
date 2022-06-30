@@ -7,7 +7,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cours$cours',
-        'USER': 'coursesall',
+        'USER': 'cours',
         'PASSWORD': 'bdpassword',
         'HOST': 'cours.mysql.pythonanywhere-services.com',
         'TEST': {
