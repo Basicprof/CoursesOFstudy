@@ -37,7 +37,6 @@ class CourseCreateView(PermissionRequiredMixin,
                         OwnerCourseEditMixin,
                         CreateView):
     permission_required = 'courses.add_course'
-    prepopulated_fields = {'slug': ('title',)}
 class CourseUpdateView(PermissionRequiredMixin,
                         OwnerCourseEditMixin,
                         UpdateView):
