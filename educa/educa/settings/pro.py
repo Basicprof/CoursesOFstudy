@@ -15,5 +15,5 @@ DATABASES = {
           }
     }
 }
-ALLOWED_HOSTS = ['cours.pythonanywhere.com',]
+ALLOWED_HOSTS = ["*",'cours.pythonanywhere.com',]
  
