@@ -1,4 +1,15 @@
  python manage.py collectstatic
+ ------------фикстуры--------------------------
+ вывести в консоль структуру
+ python manage.py dumpdata courses --indent=2
+ python manage.py dumpdata -- help.
+ --------- загруизть в файл
+ mkdir courses/fixtures  
+python manage.py dumpdata courses --indent=2 --
+output=courses/fixtures/subjects.json
+-----------Загрузить в базу
+python manage.py loaddata subjects.json
+===========------
  //////////////////////
   плагины для vscode
  С++
@@ -62,6 +73,13 @@ AssertionError: database connection isn’t set to UTC
 
 ========================================
               memcached
+              скачать 
+              распоковать командой
+tar -zxvf memcached-1.xxtar.gz
+              установить командой
+./configure && make && make test && sudo make install
+запкуить командой 
+memcached -l 127.0.0.1:11211
 1.запуск от имени админа cmd все команды и запуск
 ставлю версию 1.4.4 c:\memcached\memcached.exe -d install
 c:\memcached\memcached.exe -d install
