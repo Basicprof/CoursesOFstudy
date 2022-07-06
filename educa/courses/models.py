@@ -6,7 +6,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-from pytils.translit import slugify
+ 
 class Subject(models.Model):
         title = models.CharField(max_length=200)
         slug = models.SlugField(max_length=200, unique=True)
@@ -38,8 +38,7 @@ class Course(models.Model):
         return self.title
 
     def save(self,  *args, **kwargs):
-            self.slug = slugify(self.title)
-            return super(Course, self).save(*args, **kwargs)    
+             return super(Course, self).save(*args, **kwargs)    
 
 class Module(models.Model):
     course = models.ForeignKey(Course,
@@ -85,14 +84,15 @@ class ItemBase(models.Model):
         abstract = True
     def __str__(self):
         return self.title
+    def render(self):
+        return render_to_string('courses/content/{}.html'.format(
+                    self._meta.model_name), {'item': self})    
 #         В этом методе мы вызываем функцию render_to_string(), чтобы сгенериро-
 # вать шаблон с контекстом и получить результат в виде строки
 # Чтобы динамически формировать имя шаблона, обратимся 
 # к атрибуту self._meta.model_name модели. Метод render() предоставляет общий 
 # интерфейс для генерации шаблона под конкретный тип содержимого.
-    def render(self):
-        return render_to_string('courses/content/{}.html'.format(
-                    self._meta.model_name), {'item': self})    
+  
 class Text(ItemBase):
     content = models.TextField()
 class File(ItemBase):
