@@ -37,12 +37,11 @@
         <div data-id="{{ content.id }}">
           <!-- ходим по списку содержимого каждого модуля, обращаясь к content.item -->
           <!-- получить соответствующий объект одного из типов Text, Video, Image или File -->
-          {% with item=content.item %}
           <!-- свой  шаблонный фильтр -->
+          {% with item=content.item %}
           <p>{{ item }} ({{ item|model_name }})</p>
-          <a href="{% url 'module_content_update' module.id item|model_name item.id
-          %}">Edit</a>
-            <form action="{% url 'module_content_delete' content.id %}"
+          <a href="{% url 'module_content_update' module.id item|model_name item.id %}">Edit</a>
+           <form action="{% url 'module_content_delete' content.id %}"
               method="post">
               <input type="submit" value="Delete">
               {% csrf_token %}

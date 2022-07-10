@@ -41,6 +41,8 @@ class CourseUpdateView(PermissionRequiredMixin,
                         OwnerCourseEditMixin,
                         UpdateView):
     permission_required = 'courses.change_course'
+    # Примесь PermissionRequiredMixin добавляет проверку наличия у пользователя 
+# разрешения,
 class CourseDeleteView(PermissionRequiredMixin,
                         OwnerCourseMixin,
                         DeleteView):
@@ -111,8 +113,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
             obj = form.save(commit=False)
             obj.owner = request.user
             obj.save()
-            if not id:
-                # Создаем новый объект.
+            if not id: 
                 Content.objects.create(module=self.module, item=obj)
             return redirect('module_content_list', self.module.id)
         return self.render_to_response({'form': form, 'object': self.obj})
