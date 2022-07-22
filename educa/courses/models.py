@@ -6,7 +6,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from .fields import OrderField
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-from django.utils.text import slugify  
+   
 class Subject(models.Model):
         title = models.CharField(max_length=200)
         slug = models.SlugField(max_length=200, unique=True)
@@ -37,9 +37,7 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
-    def save(self,  *args, **kwargs):
-             self.slug = slugify(self.title)
-             return super(Course, self).save(*args, **kwargs)    
+    
 
 class Module(models.Model):
     course = models.ForeignKey(Course,
