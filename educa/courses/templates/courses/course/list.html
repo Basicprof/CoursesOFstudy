@@ -4,30 +4,27 @@
 предметов Subject -->
 {% block title %}
   {% if subject %}
-    {{ subject.title }} courses
+    {{ subject.title }}  
   {% else %}
-    All courses
+   Все курсы
   {% endif %}
 {% endblock %}
 {% block content %}
   <h1>
     {% if subject %}
-      {{ subject.title }} courses
+    {{ subject.title }}  
     {% else %}
-      All courses
+      Все курсы
     {% endif %}
   </h1>
-  <div class="contents">
-    <h3>Subjects</h3>
+  <div class="contents"> 
     <ul id="modules">
-      <li {% if not subject %}class="selected"{% endif %}>
-        <a href="{% url 'course_list' %}">All</a>
-      </li>
+     
       {% for s in subjects %}
         <li {% if subject == s %}class="selected"{% endif %}>
           <a href="{% url 'course_list_subject' s.slug %}">
             {{ s.title }} 
-            <br><span>{{ s.total_courses }} courses</span>
+            <br><span>{{ s.total_courses }} Курса</span>
         </a>
       </li>
     {% endfor %}
@@ -35,7 +32,7 @@
 </div>
 
 <div class="module">
-  {% if subject  %}
+  {% if courses  %}
   {% for course in courses %}
     {% with subject=course.subject %}
       <h3><a href="{% url 'course_detail' course.slug %}">
@@ -43,8 +40,8 @@
       <p>
         <a href="{% url 'course_list_subject' subject.slug %}">
         {{ subject }}</a>.
-        {{ course.total_modules }} modules.
-        Instructor: {{ course.owner.get_full_name }}
+        {{ course.total_modules }} модулей.
+        Преподаватель: {{ course.owner.get_full_name }}
       </p>
     {% endwith %}
   {% endfor %}
@@ -57,20 +54,21 @@
    <strong>Технологии:</strong>
    <ul><li>Django, CMS, Система регистрации и управления пользователей , Наборы форм</li>
    <li>Кеширование-Memcached</li>
-   <li> База данных-MYSQL, ORM - Django, Ajax - сохранение в бд</li>
+   <li> База данных-MYSQL, ORM - Django, Ajax - сохранение в бд,импорт-экспорт sqlite,MYSQL, postgress c помощью fixtures</li>
    <li>примеси django-braces</li>
    <li>Порядок модулей и содержимого drag-m-drop (виджет JavaScript)</li>
     <li>Единый интерфейс для формирования  
       шаблонов содержимого разных типов</li>
+     
       <li>Deploy : pythonanywhere.com</li>
       <li>RESTful api  (реализация получения курсов)
         c аунтификацией(для зачисления на курс)</li>
   </ul>  
   <div class="row"><div class="col">
     <ul><li>
-       <a href="/students/register/">Регистрация студента</a></li>
+       <a href="/students/register/">Регистрация студента и подписка на курсы</a></li>
     <li><a href="/course/mine/">Настройка модулей Учитель</a>
-    Login:Teacher ; Password:1234qwer ;</li>
+    <!-- Login:Teacher ; Password:1234qwer ;</li> -->
     <!-- <li><a href="/admin/">Admin</a></li> -->
   
      </ul></div><div class="col">

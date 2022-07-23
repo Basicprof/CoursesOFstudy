@@ -16,6 +16,7 @@ class Subject(models.Model):
             verbose_name_plural = 'Предметы'
         def __str__(self):
             return self.title
+           
 class Course(models.Model):
     owner = models.ForeignKey(User,
                                related_name='courses_created',
